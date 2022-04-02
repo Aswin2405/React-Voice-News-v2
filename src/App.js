@@ -8,10 +8,11 @@ function App() {
   const API_KEY = ``
   const API_Endpoint = `http://api.mediastack.com/v1/news`;
   const ALAN_SDK_Key = ``
-  const [categories, setCategories] = useState('general')
+  const [categories, setCategories] = useState('general');
+  const [countries, setCountry] = useState('in')
   const [newsData, setNewsData] = useState([])
   const getNewsData = () => {
-    axios.get(`${API_Endpoint}?access_key=${API_KEY}&categories=${categories}&languages=en`)
+    axios.get(`${API_Endpoint}?access_key=${API_KEY}&categories=${categories}&languages=en&countries=${countries}`)
       .then(response => {
         setNewsData(response.data.data)
       })
@@ -22,6 +23,10 @@ function App() {
 
   const categorySelect = (e) => {
     setCategories(e.target.value)
+  }
+
+  const countrySelect = (e) => {
+    setCountry(e.target.value)
   }
 
   useEffect(() => {
@@ -35,10 +40,11 @@ function App() {
 
   useEffect(() => {
     getNewsData();
-  }, [categories])
+  }, [categories, countries])
   return (
     <>
-    <h1>GoodNews Voice</h1>
+      <h1>GoodNews Voice</h1>
+      <p className='app-description'>Press the Mic and Say Get the news from any category</p>
       <div className='category-filter'>
         <label for="category">Choose a Category</label>
         <select
@@ -56,7 +62,31 @@ function App() {
           <option value="technology">Technology</option>
         </select>
       </div>
+      <div className='category-filter'>
+        <label for="category">Choose a Country</label>
+        <select
+          name="country"
+          id="country"
+          className='category-select'
+          onChange={countrySelect}
+        >
+          <option value="in">India</option>
+          <option value="us">United States</option>
+          <option value="gb">United Kingdom</option>
+          <option value="cn">China</option>
+          <option value="hk">Hong-Kong</option>
+          <option value="jp">Japan</option>
+          <option value="tr">Turkey</option>
+          <option value="ua">Ukraine</option>
+        </select>
+      </div>
       <NewsDisplay newsData={newsData} />
+
+      {newsData.length === 0 ? (
+        <h2 className='noNews'>No News Found</h2>
+      ) : (
+        <></>
+      )}
     </>
   );
 }

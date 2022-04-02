@@ -11,21 +11,20 @@ export default function NewsDisplay({
         return (
           <div className='news-container news-data'>
             <div>
+            {news.image && <img className='news-image' src={news.image} alt='image' />}
               <div className='news-col'>
                 <p className='text-capitalize'>{news.source}</p>
-                <p>{moment(news.published_at).format('LLL')}</p>
+                <p>{moment(news.published_at).format('LL')}</p>
               </div>
 
               <h3>{news.title}</h3>
 
-              <p>{news.description}</p>
+              {/* <p>{(news.description).substring(0, 100)}</p> */}
+              <a className='link-url' href={news.url} target="_blank">Read this Article..</a>
               <div className='news-col text-capitalize'>
-                <p>Author: {news.author}</p>
-                <p>Category: {news.category}</p>
+                {news.author && <p>{news.author}</p>}
+                {news.category && <p>{news.category} News</p>}
               </div>
-            </div>
-            <div>
-              <img className='news-image' src={news.image ? news.image : NoImage} alt='image' />
             </div>
           </div>
         )

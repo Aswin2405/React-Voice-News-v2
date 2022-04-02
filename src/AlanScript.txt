@@ -1,7 +1,7 @@
-intent('Get the news from $(item* (.*)) Category', (p) => {
+intent('Get the news from $(item* (.*)) category', (p) => {
     if(p.item.value){
         p.play({ command: 'VoiceNews', data: p.item.value });
-        p.play(`Fetching News on ${p.item.value} Category`);
+        p.play(`Fetching News on ${p.item.value} category`);
     }
     else{
         p.play(`Cannot get Data`);

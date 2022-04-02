@@ -13,16 +13,24 @@ label{
     padding: 5px;
 }
 
+.app-description{
+    text-align: center;
+    font-weight: 600;
+    font-style: italic;
+}
+
 .category-select{
     height: 30px;
     width: 200px;
     margin-top: 2px;
-    border: 1px solid #b7b7b7;
+    border: 1px solid #8a8a8a;
+    outline: #b7b7b7;
     border-radius: 10px;
 }
 
+
 .news-image{
-    width: 200px;
+    width: 100%;
 }
 
 .news-col{
@@ -34,7 +42,6 @@ label{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     padding: 10px;
 }
 
@@ -53,4 +60,15 @@ label{
     justify-content: center;
     align-items: center;
     height: 40px;
+}
+
+.link-url{
+    font-family: Poppins;
+    color: #5f5f5f;
+    font-style: italic;
+}
+
+.noNews{
+    text-align: center;
+    font-family: Poppins;
 }
