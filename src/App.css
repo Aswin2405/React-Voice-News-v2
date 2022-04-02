@@ -1,38 +1,56 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+h1{
+    text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1, h3, p{
+    font-family: Poppins;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+label{
+    font-family: Poppins;
+    padding: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.category-select{
+    height: 30px;
+    width: 200px;
+    margin-top: 2px;
+    border: 1px solid #b7b7b7;
+    border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.news-image{
+    width: 200px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.news-col{
+    display: flex;
+    justify-content: space-between;
+}
+
+.news-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.news-data{
+    border: 1px solid #e0e0e0;
+    margin: 10px;
+}
+
+.text-capitalize{
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.category-filter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
 }
