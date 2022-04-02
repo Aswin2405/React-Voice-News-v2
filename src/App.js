@@ -5,9 +5,9 @@ import axios from 'axios';
 import alanBtn from '@alan-ai/alan-sdk-web';
 
 function App() {
-  const API_KEY = `e1ffa1530e8949ed49e888892e0d908d`
+  const API_KEY = ``
   const API_Endpoint = `http://api.mediastack.com/v1/news`;
-  const ALAN_SDK_Key = `803072af320a4031d385ee5c9f9cbf5c2e956eca572e1d8b807a3e2338fdd0dc/stage`
+  const ALAN_SDK_Key = ``
   const [categories, setCategories] = useState('general')
   const [newsData, setNewsData] = useState([])
   const getNewsData = () => {
