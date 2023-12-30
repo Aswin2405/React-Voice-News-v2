@@ -5,15 +5,16 @@ import axios from 'axios';
 import alanBtn from '@alan-ai/alan-sdk-web';
 
 function App() {
-  const API_KEY = ``
+  const API_KEY = `d1012a32921c4917af09afae68dbd3fe`
   const API_Endpoint = `http://api.mediastack.com/v1/news`;
-  const ALAN_SDK_Key = ``
+  const ALAN_SDK_Key = `1222910db44bc9ed1536d484d3298f122e956eca572e1d8b807a3e2338fdd0dc/stage`
   const [categories, setCategories] = useState('general');
   const [countries, setCountry] = useState('in')
   const [newsData, setNewsData] = useState([])
   const getNewsData = () => {
-    axios.get(`${API_Endpoint}?access_key=${API_KEY}&categories=${categories}&languages=en&countries=${countries}`)
+    axios.get(`${`http://api.mediastack.com/v1/news`}?access_key=${`d1012a32921c4917af09afae68dbd3fe`}&categories=${categories}&languages=en&countries=${countries}`)
       .then(response => {
+        console.log(response.data,"dafa")
         setNewsData(response.data.data)
       })
       .catch(err => {
